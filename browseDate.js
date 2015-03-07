@@ -1,17 +1,15 @@
-console.log("start");
-currentUser = Parse.User.current();
-navigator.geolocation.getCurrentPosition(function(position) {
-	currentUser.position = position; 
-});
-
 var findDates = function() {
 	
-	console.log("got here");
-	
+    currentUser = Parse.User.current();
+    navigator.geolocation.getCurrentPosition(function(position) {
+        currentUser.position = position; 
+    });
+
 	var userQuery = new Parse.Query(Parse.Object.extend("UserInformation"));
-	userQuery.equalTo("gender", currentUser.get("genderPref"));
-	userQuery.greaterThanOrEqualTo("age", currentUser.get("minAge"));
-	userQuery.lessThanOrEqualTo("age", currentUser.get("maxAge"));
+    
+//	userQuery.equalTo("gender", currentUser.get("genderPref"));
+//	userQuery.greaterThanOrEqualTo("age", currentUser.get("minAge"));
+//	userQuery.lessThanOrEqualTo("age", currentUser.get("maxAge"));
 /*
 	userQuery.find({
 		success: displayDates,
@@ -44,8 +42,8 @@ var displayDates = function(results) {
 	}
 };
 
-$(function() {
-	console.log("Ready");
-	$("#distancePref, #timePref, #categoryPref").on("change", findDates);
-	findDates();
-});
+//$(function() {
+//	console.log("Ready");
+//	$("#distancePref, #timePref, #categoryPref").on("change", findDates);
+//	findDates();
+//});
