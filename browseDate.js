@@ -7,8 +7,6 @@ var findDates = function() {
 
     var userInfo;
     
-	
-    
     // get user info
     if (currentUser) {
         
@@ -34,7 +32,7 @@ var findDates = function() {
             alert("Error: " + error.code + " " + error.message);
           }
         });
-    
+    }
 	
 
 	/*
