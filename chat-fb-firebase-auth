@@ -17,7 +17,7 @@
     <script type='text/javascript'>
     
       // Create a new Firebase reference, and a new instance of the Login client
-      var firechatRef = new Firebase('https://<date-hackfb>.firebaseio.com/chat');
+      var firechatRef = new Firebase('https://date-hackfb.firebaseio.com/chat');
       firechatRef.onAuth(function(authData) {
        
         // Once authenticated, instantiate Firechat with our user id and user name
