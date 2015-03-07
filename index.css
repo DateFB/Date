@@ -11,6 +11,8 @@ body{
     border-style: none;
     color: #FFF;
     overflow: hidden;
+    padding: .5em;
+    min-height: 300px;
 }
 
 .navbar-custom a {
