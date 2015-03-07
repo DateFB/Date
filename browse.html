@@ -37,6 +37,7 @@
     <!-- The following snippet of code will give the basic version of the SDK where the 
      options are set to their most common defaults. You should insert it directly 
      after the opening <body> tag on each page you want to load it -->
+    
     <script>
       // Initialize Parse
       Parse.initialize("q46GGBIFXMFTwkTFjjvDNT26Zc8d21jVwQehkeKv", "WAQ3OTvsP6Ka7bx00sM7JhgiENyU0izNVftDJOJD");
@@ -61,17 +62,32 @@
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
     </script>
+	
     
     <nav class="navbar navbar-default">
 	    <div class="container-fluid">
 		    <div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#dt-navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+				</button>
 			    <a class="navbar-brand" href="#">Date</a>
+		    </div>
+		    <div class="collapse navbar-collapse" id="dt-navbar-collapse">
+			    <ul class="nav navbar-nav navbar-right">
+				    <li><a href="/create.html">Create</a></li>
+				    <li class="active"><a href="/browse.html">Browse <span class="sr-only">(current)</span></a></li>
+				    <li><a href="/chat.html">Chat</a></li>
+				    <li><a href="/profile.html">Profile</a></li>
+			    </ul>
 		    </div>
 	    </div>
     </nav>
-			    
     
     
+	    
     <!-- Our JS files -->
     <script src="profile.js"></script>
     <script src="DateInfo.js"></script>
