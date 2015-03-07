@@ -14,28 +14,28 @@ var findDates = function() {
         var query = new Parse.Query(UserInformationClass);
         query.equalTo("fbUserName", currentUser.attributes.username);
         query.find({
-            success: function(results) {
-                userInfo = results[0];
-
-                var userQuery = new Parse.Query(Parse.Object.extend("UserInformation"));
-
-                userQuery.equalTo("gender", userInfo.get("genderPref"));
-                //                userQuery.greaterThanOrEqualTo("age", userInfo.get("minAge"));
-                //                userQuery.lessThanOrEqualTo("age", userInfo.get("maxAge"));
-
-                userQuery.find({
-                success: function(results) {
-
-                    console.log(results[0]);
-                },
-                error: function(error) {
-                    alert("Error: " + error.code + " " + error.message);
-                }
-                });
-            },
-            error: function(error) {
-                // alert("Error: " + error.code + " " + error.message);
-            }
+//            success: function(results) {
+//                userInfo = results[0];
+//
+//                var userQuery = new Parse.Query(Parse.Object.extend("UserInformation"));
+//
+//                userQuery.equalTo("gender", userInfo.get("genderPref"));
+//                //                userQuery.greaterThanOrEqualTo("age", userInfo.get("minAge"));
+//                //                userQuery.lessThanOrEqualTo("age", userInfo.get("maxAge"));
+//
+//                userQuery.find({
+//                success: function(results) {
+//
+//                    console.log(results[0]);
+//                },
+//                error: function(error) {
+//                    alert("Error: " + error.code + " " + error.message);
+//                }
+//                });
+//            },
+//            error: function(error) {
+//                // alert("Error: " + error.code + " " + error.message);
+//            }
         });
     }
 	
