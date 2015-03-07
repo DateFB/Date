@@ -1,17 +1,23 @@
+console.log("start");
 currentUser = Parse.User.current();
 navigator.geolocation.getCurrentPosition(function(position) {
 	currentUser.position = position; 
 });
 
 var findDates = function() {
-	var userQuery = new Parse.Query(Parse.UserInformation);
+	
+	console.log("got here");
+	
+	var userQuery = new Parse.Query(Parse.Object.extend("UserInformation"));
 	userQuery.equalTo("gender", currentUser.get("genderPref"));
 	userQuery.greaterThanOrEqualTo("age", currentUser.get("minAge"));
 	userQuery.lessThanOrEqualTo("age", currentUser.get("maxAge"));
+/*
 	userQuery.find({
 		success: displayDates,
 		error: alert("Problem with query.")
 	});
+*/
 	/*
 	var DateInfo = Parse.Object.extend("Date");
 	var dateQuery = new Parse.Query(DateInfo);
