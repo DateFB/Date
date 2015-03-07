@@ -34,13 +34,12 @@
     <!-- Our JS files -->
     <script src="parseUtils.js"></script>
 
-    <script>
-// <!-- function saveDate() { -->
+    <script type="text/javascript">
         var DateInfo = Parse.Object.extend("Date");
         var dateinfo = new DateInfo();
 
         dateinfo.set("UserID", "111");
-        dateinfo.set("DateString", new Date().toString();
+        dateinfo.set("DateString", (new Date()).toString();
         dateinfo.set("Headline", "Make it a double.");
         dateinfo.set("LocationName", "Starbucks");
 
@@ -66,11 +65,10 @@
                 console.log("nope");
             }
         });
-// <!-- } -->
+
 
 
     </script>
 
 </body>
 </html>
-
