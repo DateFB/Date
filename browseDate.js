@@ -82,8 +82,13 @@ var displayDates = function(results) {
 			html += '</div>';
 			html += '</article>';
 		}
+		$('#dateResults").html(html);
 	}
 };
+
+var loadDetail = function(user) {
+	
+}
 
 /*
 <article class="col-sm-6 col-md-4">
