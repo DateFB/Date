@@ -21,8 +21,8 @@ var findDates = function() {
                 var userQuery = new Parse.Query(Parse.Object.extend("UserInformation"));
 
                 userQuery.equalTo("gender", userInfo.get("genderPref"));
-                //                userQuery.greaterThanOrEqualTo("age", userInfo.get("minAge"));
-                //                userQuery.lessThanOrEqualTo("age", userInfo.get("maxAge"));
+                userQuery.greaterThanOrEqualTo("age", userInfo.get("minAge"));
+                userQuery.lessThanOrEqualTo("age", userInfo.get("maxAge"));
 
                 userQuery.find({
                     success: displayDates,
