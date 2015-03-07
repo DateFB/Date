@@ -111,14 +111,14 @@ function getUserDetails(){
               $("#profileGender").html(userInfo.get("gender"));
               
               if (userInfo.get("age") != undefined){
-                  $("profileAge").val(userInfo.get("age"));
+                  $("#profileAge").val(userInfo.get("age"));
               }
               
               if (userInfo.get("description") != undefined){
-                  $("profileDescription").html(userInfo.get("description"));
+                  $("#profileDescription").html(userInfo.get("description"));
               }
               else{
-                  $("profileDescription").html("<i>Tell us about yourself..</i>");
+                  $("#profileDescription").html("<i>Tell us about yourself..</i>");
               }
               
           },
@@ -148,6 +148,7 @@ function saveUserDetails(){
               userInfo = results[0];
               
               userInfo.set("age", $("#profileAge").val());
+              userInfo.set("description", $("#profileDescription").html());
               userInfo.save();
           },
           error: function(error) {
