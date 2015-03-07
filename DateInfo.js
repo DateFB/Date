@@ -45,8 +45,5 @@ function saveDateInfo(uid, datetime, headline, locName, locGeo, blind, purpose,
             console.log("nope");
         }
     });
+    return;
 }
-
-
-var instance = saveDateInfo("111", "2015-03-17", "let's get coffee", "Starbucks", 
-        -40, 120, false, "coffee", "do stuff", 27, 23, 30, "male", "male");
