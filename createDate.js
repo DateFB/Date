@@ -4,7 +4,7 @@
         $("#datepicker").datepicker({dateFormat: "yy-mm-dd"});
         $("#timepicker").timepicker({'timeFormat': 'h:i a'});
     });
-    
+
     function getLocation() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(displayMap);
@@ -14,9 +14,9 @@
     var gmap;
     var focus;
     var service;
-    var markers;
     var infowindow;
-    
+    var markers = [];
+
     function displayMap(position) {
         focus = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
         var mapOptions = {
@@ -30,7 +30,7 @@
     google.maps.event.addDomListener(window, 'load', getLocation);
     var catBox = document.getElementById("catbox");
     catBox.addEventListener("change", updateMap);
-    
+
     function updateMap() {
         for (var i = 0; i < markers.length; i++) {
             markers[i].setMap(null);
@@ -44,7 +44,7 @@
         };
         service.nearbySearch(request, callback);
     }
-    
+
     function callback(results, status) {
         console.log(results.length);
         if (status == google.maps.places.PlacesServiceStatus.OK) {
@@ -53,7 +53,7 @@
             }
         }
     }
-    
+
     function createMarker(place) {
         var marker = new google.maps.Marker({
             map: gmap,
