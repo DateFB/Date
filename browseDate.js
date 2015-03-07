@@ -5,7 +5,7 @@ var findDates = function() {
         currentUser.position = position; 
     });
 
-    var userInfo;
+    userInfo;
     
     // get user info
     if (currentUser) {
@@ -68,8 +68,26 @@ var displayDates = function(results) {
 		$("#results").html('<p>No results found. Please broaden your filters.</p>');
 	} else {
 		$("#results").html('<p>' + results.length + 'results found!</p>');
+		var html = '<div class="row">';
+		for (result in results) {
+			tdate = results[result];
+			html += '<div class="thumbnail"><img src="' + 
+		}
 	}
 };
+
+
+<article class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<img src="images/Unknown.jpeg" alt="">
+						<div class="caption">
+							<h3>{Date Title}</h3>
+							<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+						</div>
+						<div class="map"></div>
+						<div class="in-button"><button type="button" class="btn btn-primary btn-lg btn-block">Check It Out</button></div>
+					</div>
+				</article>
 
 //$(function() {
 //	console.log("Ready");
