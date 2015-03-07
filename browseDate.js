@@ -14,3 +14,4 @@ var dateQuery = new Parse.Query(DateInfo);
 dateQuery.matchesKeyInQuery("userID", "username", userQuery);
 var userGeo = new Parse.GeoPoint({latitude: currentUser.position.coords.latitude, longitude: currentUser.position.coords.longitude});
 dateQuery.withinMiles("locationGeo", userGeo, currentUser.get("distancePref"));
+

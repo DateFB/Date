@@ -86,6 +86,26 @@
 	    </div>
     </nav>
     
+    <div id="browseFilters">
+	    <form class="form-inline">
+			<div class="form-group">
+			    <label for="distancePref">Distance</label>
+			    <input type="text" class="form-control" id="distancePref" name="timePref"> <span>miles</span>
+			    <label for="timePref">Date/Time</label>
+			    <input type="datetime" id="timePref" name="timePref">
+				<label for="categoryPref">Category</label>
+				<select class="form-control">
+					<option value="event">Event</option>
+					<option value="fooddrink">Food/Drink</option>
+					<option value="museum">Museum</option>
+					<option value="sightseeing">Sightseeing</option>
+					<option value="outdoor">Outdoor</option>
+					<option value="other">Other</option>
+				</select>
+			</div>
+	    </form>
+    </div>
+    
     <div id="results">
     
 	    <!-- Date Listings -->
@@ -148,7 +168,7 @@
 		    </div>
 	    </div>
 	
-    </div><!-- end of content -->
+    </div><!-- end of results -->
 	
 	<nav id="footer" class="row">
 		<a href="/contact.html">Contact Us</a>
