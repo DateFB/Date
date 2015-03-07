@@ -25,27 +25,33 @@
     
 </head>
 <body>
-<!-- The following snippet of code will give the basic version of the SDK where the 
+    <!-- The following snippet of code will give the basic version of the SDK where the 
      options are set to their most common defaults. You should insert it directly 
      after the opening <body> tag on each page you want to load it -->
-<script>
-    window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '457428537742584',
-      status     : true,
-      xfbml      : true,
-      version    : 'v2.2'
-    });
-    };
-    
-    (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk/debug.js";
-     fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-</script>
+    <script>
+      // Initialize Parse
+      Parse.initialize("YOUR_APP_ID", "YOUR_JAVASCRIPT_KEY");
+
+      window.fbAsyncInit = function() {
+        Parse.FacebookUtils.init({ // this line replaces FB.init({
+          appId      : '457428537742584', // Facebook App ID
+          status     : true,  // check Facebook Login status
+          cookie     : true,  // enable cookies to allow Parse to access the session
+          xfbml      : true,  // initialize Facebook social plugins on the page
+          version    : 'v2.2' // point to the latest Facebook Graph API version
+        });
+
+        // Run code after the Facebook SDK is loaded.
+      };
+
+      (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
 
     <div id="loginbtn" class="btn btn-primary">
         Get Started

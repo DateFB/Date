@@ -1,6 +1,9 @@
 currentUser = undefined;
 
 $("#loginbtn").click(function(){
+    
+    alert("hey");
+    
     Parse.FacebookUtils.logIn(null, {
       success: function(user) {
         if (!user.existed()) {
