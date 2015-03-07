@@ -95,6 +95,7 @@
                 seekmin = userInfo.get("minAge");
                 seekmax = userInfo.get("maxAge");
                 seekgen = userInfo.get("genderPref");
+          },
             error: function(error) {
                 alert("Error: " + error.code + " " + error.message);
             }
