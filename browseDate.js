@@ -40,15 +40,15 @@ var findDates = function() {
 					success: displayDates,
 					error: alert("Problem with query.")
 				});
-				
-/*
-                userQuery.find({
+				*/
+
+                dateQuery.find({
                     success: displayDates,
                     error: function(error) {
                         alert("Error: " + error.code + " " + error.message);
                     }
                 });
-*/
+
             },
             error: function(error) {
                 alert("Error: " + error.code + " " + error.message);
