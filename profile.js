@@ -60,8 +60,8 @@ function createInitialUser(){
                         "/me/picture",
                         {
                             "redirect": false,
-                            "height": 200,
-                            "width": 200,
+                            "height": 400,
+                            "width": 400,
                             "type": "normal"
                         },
                         function (response) {
