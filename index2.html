@@ -16,7 +16,7 @@
     </style>
     <!-- Googele Maps API with auth key -->
     <script type="text/javascript"
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSUePcmFpi7VdwNfaFXkNc0zo2hO9N9Mk">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSUePcmFpi7VdwNfaFXkNc0zo2hO9N9Mk&libraries=places,geometry">
     </script>
 </head>
 
@@ -78,3 +78,46 @@
         </script>
 </body>
 </html>
+
+<!--
+
+To search using the Google Places API
+https://maps.googleapis.com/maps/api/place/radarsearch/output?parameters
+
+output on of:
+        json, xml
+req parameters:
+        key, location=lat,lon, radius (in meters, max 50,000)
+at least one of:
+        name
+        keyword
+        type=(amusement_park|aquarium|art_gallery|bar|cafe|food|movie_theater|museum|night_club|park|restaurant|shopping_mall|spa|stadium|zoo)
+
+Example JSON result:
+
+{
+   "html_attributions" : [],
+   "results" : [
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : -33.870775,
+               "lng" : 151.199025
+            }
+         },
+         "name" : "Rhythmboat Cruises",
+         "types" : [ "travel_agency", "restaurant", "food", "establishment" ],
+      },
+      {...},
+      {...},
+      "status" : "OK"
+}
+
+"status" can be one of:
+        "OK"
+        "ZERO_RESULTS" - results[] is empty
+        "OVER_QUERY_LIMIT" - we've abused this free service
+        "REQUEST_DENIED" - usually because of a bad 'key' parameter
+        "INVALID_REQUEST" - missing a required query parameter
+-->
+
