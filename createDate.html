@@ -17,13 +17,7 @@
         <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.6.2/jquery.timepicker.min.js">
         </script>
-
-        <script>
-          $(function() {
-            $("#datepicker").datepicker({dateFormat: "yy-mm-dd"});
-            $("#timepicker").timepicker({'timeFormat': 'h:i a'});
-          });
-        </script>
+        
         <style type="text/css">
             body, html {
                 height: 100%;
@@ -67,3 +61,10 @@
             </p>
         </div>
     </form>
+    <p>
+        <div id="map-canvas"></div>
+    </p>
+    
+    <script src="createDate.js"></script>
+    </body>
+</html>
