@@ -40,15 +40,15 @@ var findDates = function() {
 					success: displayDates,
 					error: alert("Problem with query.")
 				});
-				
-/*
-                userQuery.find({
+				*/
+
+                dateQuery.find({
                     success: displayDates,
                     error: function(error) {
                         alert("Error: " + error.code + " " + error.message);
                     }
                 });
-*/
+
             },
             error: function(error) {
                 alert("Error: " + error.code + " " + error.message);
@@ -65,24 +65,29 @@ var findDates = function() {
 var displayDates = function(results) {
     console.log("Display Dates was correctly called");
 	if (results.length < 1) {
-		$("#results").html('<p>No results found. Please broaden your filters.</p>');
+		$("#dateResults").html('<p>No results found. Please broaden your filters.</p>');
 	} else {
 		$("#dateResults").html('<p>' + results.length + 'results found!</p>');
 		var html = '<div class="row">';
 		for (result in results) {
 			tdate = results[result];
 			html += '<article class="col-md-4">';
-			html += '<div class="thumbnail"><img src="' + "" + '>';
+			html += '<div class="thumbnail"><img src="' + '' + '>';
 			html += '<div class="caption">';
 			html += '<h3>' + tdate.get("Headline") + '</h3>';
 			html += '<p>' + tdate.get("Description") + '</p>';
 			html += '</div>';
 			html += '<div class="map"></div>';
-			html += '<div class="in-button"><button type="button" class="btn btn-primary btn-lg btn-block" data-user="' + "" + '">Check it out&hellip;</button></div>';
+			html += '<div class="in-button"><button type="button" class="btn btn-primary btn-lg btn-block" data-user="' + '' + '">Check it out&hellip;</button></div>';
 			html += '</div>';
 			html += '</article>';
 		}
+		$('#dateResults').html(html);
 	}
+};
+
+var loadDetail = function(user) {
+	
 };
 
 /*
@@ -101,8 +106,8 @@ var displayDates = function(results) {
 //$(function() {
 //	console.log("Ready");
 //	$("#distancePref, #timePref, #categoryPref").on("change", findDates);
-	$("body").on('click', '.in-button', function() {
-		
-	});
+//	$("body").on('click', '.in-button', function() {
+//		
+//	});
 //	findDates();
 //});
