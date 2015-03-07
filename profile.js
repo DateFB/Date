@@ -109,6 +109,18 @@ function getUserDetails(){
               
               $("#profileFirstName").html(userInfo.get("firstName"));
               $("#profileGender").html(userInfo.get("gender"));
+              
+              if (userInfo.get("age") != undefined){
+                  $("profileAge").val(userInfo.get("age"));
+              }
+              
+              if (userInfo.get("description") != undefined){
+                  $("profileDescription").html(userInfo.get("description"));
+              }
+              else{
+                  $("profileDescription").html("<i>Tell us about yourself..</i>");
+              }
+              
           },
           error: function(error) {
             alert("Error: " + error.code + " " + error.message);
