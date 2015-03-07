@@ -26,10 +26,12 @@
         gmap = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
         infowindow = new google.maps.InfoWindow();
         service = new google.maps.places.PlacesService(gmap);
+        document.getElementById("submit").change();
     }
     google.maps.event.addDomListener(window, 'load', getLocation);
     var catBox = document.getElementById("catbox");
     catBox.addEventListener("change", updateMap);
+    document.getElementById("submit").addEventListener("click", saveDateInfo);
 
     function updateMap() {
         for (var i = 0; i < markers.length; i++) {
@@ -66,4 +68,15 @@
             infowindow.open(gmap, this);
         });
     }
+
+    function saveDateInfo() {
+        var uid = Parse.User.current().attributes.username;
+
+        var headline = document.getElementById("title").value;
+        var locationName = document.getElementById("locationName").value;
+
+        var blind = document.getElementById("blind").checked;
+    }
+
+
 // })();
