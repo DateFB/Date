@@ -119,7 +119,7 @@ function getUserDetails(){
                   $("#profileDescription").html(userInfo.get("description"));
               }
               else{
-                  $("#profileDescription").html("<i>Tell us about yourself..</i>");
+                  $("#profileDescription").html("Tell us about yourself..");
               }
               
               if (userInfo.get("minAge") != undefined){
