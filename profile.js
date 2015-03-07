@@ -104,7 +104,7 @@ function getUserDetails(){
         query.find({
           success: function(results) {
             
-              userInfo = results[i];
+              userInfo = results[0];
               console.log(userInfo.get("gender"));
           },
           error: function(error) {
