@@ -27,8 +27,8 @@ var findDates = function() {
 				var DateInfo = Parse.Object.extend("Date");
 				var dateQuery = new Parse.Query(DateInfo);
 				dateQuery.matchesKeyInQuery("userID", "username", userQuery);
-				console.log("so far so good");
-				/*
+				
+				
 				var userGeo = new Parse.GeoPoint({latitude: currentUser.position.coords.latitude, longitude: currentUser.position.coords.longitude});
 				dateQuery.withinMiles("locationGeo", userGeo, currentUser.get("distancePref"));
 				dateQuery.greaterThanOrEqualTo("dateTime", $("#timePref").val());
@@ -36,11 +36,8 @@ var findDates = function() {
 				dateQuery.equalTo("gender", currentUser.get("gender"));
 				dateQuery.greaterThanOrEqualTo("minAge", currentUser.get("age"));
 				dateQuery.lessThanOrEqualTo("maxAge", currentUser.get("age"));
-				dateQuery.find({
-					success: displayDates,
-					error: alert("Problem with query.")
-				});
-				*/
+				
+				console.log("so far so good");
 
                 dateQuery.find({
                     success: displayDates,
