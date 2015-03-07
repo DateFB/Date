@@ -1,0 +1,36 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+
+    <!-- Bootstrap Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+
+    <!-- Parse Javascript Library -->
+    <script type="text/javascript" src="https://www.parsecdn.com/js/parse-1.3.5.min.js"></script>
+
+    <!-- Googele Maps API with auth key -->
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSUePcmFpi7VdwNfaFXkNc0zo2hO9N9Mk">
+    </script>
+</head>
+<body>
+
+    <div id="map-canvas" style="width: 100%; height: 100%"></div>
+
+    <!-- Our JS files -->
+    <script src="DateInfo.js"></script>
+    <script src="parseUtils.js"></script>
+
+</body>
+</html>
