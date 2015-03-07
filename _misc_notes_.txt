@@ -1,1 +1,0 @@
-The API key generated for the Google Maps API allows use only on *.rawgit.com/DateFB/*
