@@ -105,8 +105,7 @@ function getUserDetails(){
           success: function(results) {
             
               userInfo = results[i];
-              console.log(userInfo.get("gender"))
-            }
+              console.log(userInfo.get("gender"));
           },
           error: function(error) {
             alert("Error: " + error.code + " " + error.message);
