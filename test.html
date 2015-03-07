@@ -20,6 +20,20 @@
     <!-- Parse Javascript Library -->
     <script type="text/javascript" src="https://www.parsecdn.com/js/parse-1.3.5.min.js"></script>
 
+</head>
+
+
+<body>
+    <script>
+      // Initialize Parse
+      Parse.initialize("q46GGBIFXMFTwkTFjjvDNT26Zc8d21jVwQehkeKv", "WAQ3OTvsP6Ka7bx00sM7JhgiENyU0izNVftDJOJD");
+
+    </script>
+    <div id="map-canvas"></div>
+
+    <!-- Our JS files -->
+    <script src="parseUtils.js"></script>
+
     <script type="text/javascript">
     var DateInfo = Parse.Object.extend("Date", { }, {
     createNew: function(userID, dateTime, headline, locationName, lat, lon, blind, category, description, age, minSeek, maxSeek, gen, genSeek) {
@@ -44,14 +58,14 @@
         d.set("PosterGenderPref", genSeet);
 
         d.save(null, {
-    success: function(d) {
-        console.log("yup");
-    },
-    error: function(d, error) {
-        console.log("nope");
-        console.log(error);
-    }
-});
+            success: function(d) {
+                console.log("yup");
+            },
+            error: function(d, error) {
+                console.log("nope");
+            }
+        });
+
         return d;
     },
 
@@ -61,20 +75,6 @@ var instance = new DateInfo("111", new Date(), "Make it a double.", "Starbucks",
 console.log("before");
 
     </script>
-
-</head>
-
-
-<body>
-    <script>
-      // Initialize Parse
-      Parse.initialize("q46GGBIFXMFTwkTFjjvDNT26Zc8d21jVwQehkeKv", "WAQ3OTvsP6Ka7bx00sM7JhgiENyU0izNVftDJOJD");
-        
-    </script>
-    <div id="map-canvas"></div>
-
-    <!-- Our JS files -->
-    <script src="parseUtils.js"></script>
 
 </body>
 </html>
