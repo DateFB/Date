@@ -24,9 +24,15 @@ var findDates = function() {
 //                userQuery.lessThanOrEqualTo("age", userInfo.get("maxAge"));
 
                 userQuery.find({
-                    success: displayDates,
-                    error: alert("Problem with query.")
-                });
+                    success: function(results) {
+            
+                       console.log(results[0]);
+
+                   
+                  },
+                  error: function(error) {
+                    alert("Error: " + error.code + " " + error.message);
+                  }
           },
           error: function(error) {
             alert("Error: " + error.code + " " + error.message);
