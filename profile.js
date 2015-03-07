@@ -2,8 +2,6 @@ currentUser = {};
 
 $("#loginbtn").click(function(){
     
-    alert("hey");
-    
     Parse.FacebookUtils.logIn(null, {
       success: function(user) {
           
@@ -93,4 +91,31 @@ function createInitialUser(){
         alert('Failed to create new object, with error code: ' + error.message);
       }
     });
+}
+
+function getUserDetails(){
+    var currentUser = Parse.User.current();
+    if (currentUser) {
+        console.log(currentUser)
+        
+        var UserInformationClass = Parse.Object.extend("UserInformation");
+        var query = new Parse.Query(UserInformationClass);
+        query.equalTo("fbUserName", currentUser.attributes.username);
+        query.find({
+          success: function(results) {
+            
+              userInfo = results[i];
+              console.log(userInfo.get("gender"))
+            }
+          },
+          error: function(error) {
+            alert("Error: " + error.code + " " + error.message);
+          }
+        });
+        
+        
+    } else {
+        // show the signup or login page
+        console.log("crap, user got to this page and they aren't logged in")
+    }
 }

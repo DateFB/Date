@@ -25,13 +25,6 @@
       // Initialize Parse
       Parse.initialize("q46GGBIFXMFTwkTFjjvDNT26Zc8d21jVwQehkeKv", "WAQ3OTvsP6Ka7bx00sM7JhgiENyU0izNVftDJOJD");
         
-        var currentUser = Parse.User.current();
-        if (currentUser) {
-            console.log(currentUser)
-        } else {
-            // show the signup or login page
-            console.log("crap")
-        }
     </script>
 
     <div id="profileWrapper">
@@ -89,6 +82,10 @@
     <script src="misc.js"></script>
     <script src="parseUtils.js"></script>
     <script src="facebook-user-login.js"></script>
+    
+    <script>
+        getUserDetails();
+    </script>
     
 </body>
 </html>
