@@ -29,45 +29,16 @@
       Parse.initialize("q46GGBIFXMFTwkTFjjvDNT26Zc8d21jVwQehkeKv", "WAQ3OTvsP6Ka7bx00sM7JhgiENyU0izNVftDJOJD");
 
     </script>
+    <script src="DateInfo.js"></script>
     <div id="map-canvas"></div>
 
     <!-- Our JS files -->
     <script src="parseUtils.js"></script>
 
     <script type="text/javascript">
-        var DateInfo = Parse.Object.extend("DateInfo");
-        var dateinfo = new DateInfo();
-
-        dateinfo.set("UserID", "111");
-        dateinfo.set("DateString", new Date());
-        dateinfo.set("Headline", "Make it a double.");
-        dateinfo.set("LocationName", "Starbucks");
-
-        var point = new Parse.GeoPoint({latitude: -40, longitude: 120});
-        dateinfo.set("LocationGeo", point);
-
-        dateinfo.set("Blind", false);
-        dateinfo.set("Purpose", "coffee");
-        dateinfo.set("Description", "do stuff");
-
-        dateinfo.set("PosterAge", 27);
-        dateinfo.set("PosterGender", "male");
-
-        dateinfo.set("PosterMinAgePref", 23);
-        dateinfo.set("PosterMaxAgePref", 30);
-        dateinfo.set("PosterGenderPref", "male");
-
-        dateinfo.save(null, {
-            success: function(dateinfo) {
-                console.log("yup");
-            },
-            error: function(dateinfo, error) {
-                console.log("nope");
-            }
-        });
-
-
-
+        var instance = saveDateInfo("111", "2015-03-17", "let's get coffee",
+                "Starbucks", -40, 120, false, "coffee", "do stuff", 27, 23, 30,
+                "male", "male");
     </script>
 
 </body>
