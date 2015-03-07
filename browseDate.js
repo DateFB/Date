@@ -65,7 +65,7 @@ var findDates = function() {
 var displayDates = function(results) {
     console.log("Display Dates was correctly called");
 	if (results.length < 1) {
-		$("#results").html('<p>No results found. Please broaden your filters.</p>');
+		$("#dateResults").html('<p>No results found. Please broaden your filters.</p>');
 	} else {
 		$("#dateResults").html('<p>' + results.length + 'results found!</p>');
 		var html = '<div class="row">';
