@@ -78,7 +78,7 @@ var displayDates = function(results) {
 			html += '<p>' + tdate.get("Description") + '</p>';
 			html += '</div>';
 			html += '<div class="map"></div>';
-			html += '<div class="in-button"><button type="button" class="btn btn-primary btn-lg btn-block">Check it out&hellip;</button></div>';
+			html += '<div class="in-button"><button type="button" class="btn btn-primary btn-lg btn-block" data-user="' + "" + '">Check it out&hellip;</button></div>';
 			html += '</div>';
 			html += '</article>';
 		}
@@ -101,5 +101,8 @@ var displayDates = function(results) {
 //$(function() {
 //	console.log("Ready");
 //	$("#distancePref, #timePref, #categoryPref").on("change", findDates);
+	$("body").on('click', '.in-button', function() {
+		
+	});
 //	findDates();
 //});
