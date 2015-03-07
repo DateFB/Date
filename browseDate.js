@@ -71,7 +71,16 @@ var displayDates = function(results) {
 		var html = '<div class="row">';
 		for (result in results) {
 			tdate = results[result];
-			//html += '<div class="thumbnail"><img src="' + 
+			html += '<article class="col-md-4">';
+			html += '<div class="thumbnail"><img src="' + "" '>';
+			html += '<div class="caption">';
+			html += '<h3>' + tdate.get("Headline") + '</h3>';
+			html += '<p>' + tdate.get("Description") + '</p>';
+			html += '</div>';
+			html += '<div class="map"></div>';
+			html += '<div class="in-button"><button type="button" class="btn btn-primary btn-lg btn-block">Check it out&hellip;</button></div>';
+			html += '</div>';
+			html += '</article>';
 		}
 	}
 };
