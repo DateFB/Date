@@ -5,17 +5,38 @@ var findDates = function() {
         currentUser.position = position; 
     });
 
-	var userQuery = new Parse.Query(Parse.Object.extend("UserInformation"));
+    var userInfo;
     
-//	userQuery.equalTo("gender", currentUser.get("genderPref"));
-//	userQuery.greaterThanOrEqualTo("age", currentUser.get("minAge"));
-//	userQuery.lessThanOrEqualTo("age", currentUser.get("maxAge"));
-/*
-	userQuery.find({
-		success: displayDates,
-		error: alert("Problem with query.")
-	});
-*/
+	
+    
+    // get user info
+    if (currentUser) {
+        
+        var UserInformationClass = Parse.Object.extend("UserInformation");
+        var query = new Parse.Query(UserInformationClass);
+        query.equalTo("fbUserName", currentUser.attributes.username);
+        query.find({
+          success: function(results) {
+              userInfo = results[0];
+              
+                var userQuery = new Parse.Query(Parse.Object.extend("UserInformation"));
+                
+                userQuery.equalTo("gender", userInfo.get("genderPref"));
+                userQuery.greaterThanOrEqualTo("age", userInfo.get("minAge"));
+                userQuery.lessThanOrEqualTo("age", userInfo.get("maxAge"));
+
+                userQuery.find({
+                    success: displayDates,
+                    error: alert("Problem with query.")
+                });
+          },
+          error: function(error) {
+            alert("Error: " + error.code + " " + error.message);
+          }
+        });
+    
+	
+
 	/*
 	var DateInfo = Parse.Object.extend("Date");
 	var dateQuery = new Parse.Query(DateInfo);
@@ -35,6 +56,7 @@ var findDates = function() {
 };
 
 var displayDates = function(results) {
+    console.log("Display Dates was correctly called");
 	if (results.length < 1) {
 		$("#results").html('<p>No results found. Please broaden your filters.</p>');
 	} else {
