@@ -10,6 +10,11 @@ body{
     background-color: rgba(0,0,0,.4);
     border-style: none;
     color: #FFF;
+    overflow: hidden;
+}
+
+.navbar-custom a {
+	color: #FFF;
 }
 
 #landingWrapper{
