@@ -116,3 +116,8 @@ body{
 #updateProfileMessage{
     font-weight: bold;
 }
+
+#fbWrapper{
+    padding: 10px;
+    display: inline-block;
+}
