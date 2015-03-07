@@ -72,7 +72,7 @@ var displayDates = function(results) {
 		for (result in results) {
 			tdate = results[result];
 			html += '<article class="col-md-4">';
-			html += '<div class="thumbnail"><img src="' + "" '>';
+			html += '<div class="thumbnail"><img src="' + "" + '>';
 			html += '<div class="caption">';
 			html += '<h3>' + tdate.get("Headline") + '</h3>';
 			html += '<p>' + tdate.get("Description") + '</p>';
