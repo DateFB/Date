@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <head>
     <style type="text/css">
         body, html {
@@ -17,12 +17,12 @@
     <script type="text/javascript"
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSUePcmFpi7VdwNfaFXkNc0zo2hO9N9Mk">
     </script>
-    
+
         <script>
             var map;
             var infowindow;
             var focus;
-            
+
             function initialize() {
                 focus = new google.maps.LatLng(47.616831, -122.329461)
                 var mapOptions = {
@@ -33,11 +33,11 @@
                 searchNearby(500, ['food']);
             }
             google.maps.event.addDomListener(window, 'load', initialize);
-            
+
             var infowindow;
-            
+
             function search(method, arg, meters, typeopts) {
-                
+
                 var request = {
                     location: focus,
                     radius: meters,
@@ -47,7 +47,7 @@
                 var service = new google.maps.places.PlacesService(map);
                 service.nearbySearch(request, callback);
             }
-            
+
             function callback(results, status) {
                 if (status == google.maps.places.PlacesServiceStatus.OK) {
                     for (var i = 0; i < results.length; i++) {
@@ -55,6 +55,7 @@
                     }
                 }
             }
+
 
             function createMarker(place) {
                 var placeLoc = place.geometry.location;
@@ -68,8 +69,7 @@
                     infowindow.open(map, this);
                 });
             }
-            
-    </script>
+        </script>
 </head>
 </head>
 
@@ -77,46 +77,4 @@
 <body>
     <div id="map-canvas"></div>
 </body>
-
-<!--
-
-To search using the Google Places API
-https://maps.googleapis.com/maps/api/place/radarsearch/output?parameters
-
-output on of: 
-        json, xml
-req parameters: 
-        key, location=lat,lon, radius (in meters, max 50,000)
-at least one of: 
-        name
-        keyword
-        type=(amusement_park|aquarium|art_gallery|bar|cafe|food|movie_theater|museum|night_club|park|restaurant|shopping_mall|spa|stadium|zoo)
-
-Example JSON result:
-       
-{
-   "html_attributions" : [],
-   "results" : [
-      {
-         "geometry" : {
-            "location" : {
-               "lat" : -33.870775,
-               "lng" : 151.199025
-            }
-         },
-         "name" : "Rhythmboat Cruises",
-         "types" : [ "travel_agency", "restaurant", "food", "establishment" ],
-      },
-      {...}, 
-      {...},
-      "status" : "OK"
-}
-
-"status" can be one of:
-        "OK"
-        "ZERO_RESULTS" - results[] is empty
-        "OVER_QUERY_LIMIT" - we've abused this free service
-        "REQUEST_DENIED" - usually because of a bad 'key' parameter
-        "INVALID_REQUEST" - missing a required query parameter
--->
-
+</html>
