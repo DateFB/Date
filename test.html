@@ -93,6 +93,7 @@
                 gmap = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
                 infowindow = new google.maps.InfoWindow();
                 service = new google.maps.places.PlacesService(gmap);
+                updateMap();
             }
             google.maps.event.addDomListener(window, 'load', getLocation);
             var catBox = document.getElementById("catbox");
@@ -130,3 +131,4 @@
         </script>
     </body>
 </html>
+
