@@ -1,0 +1,102 @@
+#profileWrapper{
+    width: 350px;
+    background-color: #eee;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+#profileImgWrapper{
+    
+}
+
+#profileImg{
+    width: 300px;
+}
+
+#profileTitle{
+    width: 100%;
+    display: inline-block;
+}
+
+#profileFirstName{
+    font-size: 32px;
+    float: left;
+}
+
+#profileTitleComma{
+    font-size: 32px;
+    float: left;
+}
+
+#profileAge{
+    font-size: 32px;
+    float: left;
+    margin-left: 13px;
+}
+
+#profileGender{
+    float: right;
+    font-size: 18px;
+    margin-top: 11px;
+    font-style: italic;
+}
+
+#profileDescription{
+    background-color: #fff;
+    border-radius: 5px;
+    text-align: left;
+    padding: 4px;
+    height: 100px;
+    overflow-y: auto;
+}
+
+.profileFilterName{
+    font-size: 19px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.profileFilterActual{
+    text-align: center;
+}
+
+.profileFilterInterestedIn{
+    display: inline-block;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#profileFilterMinAge{
+    width: 60px;
+    display: inline-block;
+}
+
+#profileFilterAgeAnd{
+    display: inline-block;
+}
+
+#profileFilterMaxAge{
+    width: 60px;
+    display: inline-block;
+}
+
+#profileFilterDistance{
+    display: inline-block;
+    width: 60px;
+}
+
+#profileFilterDistLabel{
+    display: inline-block;
+}
+
+.profileHorizontalBreak{
+    height: 15px;
+    width: 100%;
+}
+
+#updateProfileMessage{
+    font-weight: bold;
+}

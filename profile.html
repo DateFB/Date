@@ -1,0 +1,94 @@
+<html>
+<head>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    
+    <!-- Parse Javascript Library -->
+    <script type="text/javascript" src="https://www.parsecdn.com/js/parse-1.3.5.min.js"></script>
+    
+    <!-- Our CSS file -->
+    <link rel="stylesheet" href="index.css">
+    
+    
+</head>
+<body>
+    <!-- The following snippet of code will give the basic version of the SDK where the 
+     options are set to their most common defaults. You should insert it directly 
+     after the opening <body> tag on each page you want to load it -->
+    <script>
+      // Initialize Parse
+      Parse.initialize("q46GGBIFXMFTwkTFjjvDNT26Zc8d21jVwQehkeKv", "WAQ3OTvsP6Ka7bx00sM7JhgiENyU0izNVftDJOJD");
+        
+        var currentUser = Parse.User.current();
+        if (currentUser) {
+            console.log(currentUser)
+        } else {
+            // show the signup or login page
+            console.log("crap")
+        }
+    </script>
+
+    <div id="profileWrapper">
+        <div id="profileImgWrapper">
+            <img id="profileImg" src="https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xfp1/v/t1.0-9/10291076_10152525503199151_3145442102480961538_n.jpg?oh=582e01cce2317ada87db1df952ba940b&oe=557C826F&__gda__=1434985226_d5f926365e58d2acf3be9f1f4e59260b">
+        </div>
+        <div id="profileTitle">
+            <div id="profileFirstName">Shaun</div>
+            <div id="profileTitleComma">, </div>
+            <div id="profileAge">22</div>
+            <div id="profileGender">Male</div>
+        </div>
+        
+        <div id="profileDescription" contenteditable="true">Just moved back to Seattle - I love cycling, EDM concerts, and trying out new restaurants! I'm really spontaneous and think the best adventures happen when there are no plans!</div>
+        
+        <div class="profileHorizontalBreak"></div>
+        
+        <div id="profileFilterWrapper">
+            <div class="profileFilterName">Interested In</div>
+            <div class="profileFilterActual">
+                <div class="profileFilterInterestedIn btn-default">Male</div>
+                <div class="profileFilterInterestedIn btn-primary">Female</div>
+                <div class="profileFilterInterestedIn btn-default">Other</div>
+            </div>
+            <div class="profileFilterSpacer"></div>
+            
+            <div class="profileFilterName">Between the Ages</div>
+            <div class="profileFilterActual">
+                <input id="profileFilterMinAge" class="form-control" placeholder="18" type="text">
+                <div id="profileFilterAgeAnd">And</div>
+                <input id="profileFilterMaxAge" class="form-control" placeholder="25" type="text">
+            </div>
+            <div class="profileFilterSpacer"></div>
+            
+            <div class="profileFilterName">Within</div>
+            <div class="profileFilterActual">
+                <input id="profileFilterDistance" class="form-control" placeholder="15" type="text">
+                <div id="profileFilterDistLabel">Miles</div>
+            </div>
+            <div class="profileFilterSpacer"></div>
+        </div>
+        
+        <div class="profileHorizontalBreak"></div>
+        
+        <div class="btn btn-primary btn-lg">Save Preferences</div>
+        
+        <div id="updateProfileMessage">Saved, now go check out some dates!</div>
+    </div>
+    
+    
+    <!-- Our JS files -->
+    <script src="profile.js"></script>
+    <script src="createDate.js"></script>
+    <script src="browseDate.js"></script>
+    <script src="misc.js"></script>
+    <script src="parseUtils.js"></script>
+    <script src="facebook-user-login.js"></script>
+    
+</body>
+</html>

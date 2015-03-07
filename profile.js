@@ -12,13 +12,15 @@ $("#loginbtn").click(function(){
           
         if (!user.existed()) {
             // show welcome stuff
-            alert("User signed up and logged in through Facebook!");
+            console.log("User signed up and logged in through Facebook!");
             
             createInitialUser();
             
         } else {
             // user already has an account
             alert("User logged in through Facebook!");
+            
+            //createInitialUser();
         }
         
       },
