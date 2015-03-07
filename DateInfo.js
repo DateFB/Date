@@ -14,35 +14,33 @@
 
 
 function saveDateInfo(uid, datetime, headline, locName, locGeo, blind, purpose,
-        desc, age, gender, seekmin, seekmax, seengen) {
+        desc, age, gender, seekmin, seekmax, seekgen) {
     var DateInfo = Parse.Object.extend("DateInfo");
     var dateinfo = new DateInfo();
 
-    dateinfo.set("UserID", "111");
+    dateinfo.set("UserID", uid);
     dateinfo.set("DateString", new Date());
-    dateinfo.set("Headline", "Make it a double.");
-    dateinfo.set("LocationName", "Starbucks");
+    dateinfo.set("Headline", headline);
+    dateinfo.set("LocationName", locName);
 
-    var point = new Parse.GeoPoint({latitude: -40, longitude: 120});
-    dateinfo.set("LocationGeo", point);
+    // var locGeo = new Parse.GeoPoint({latitude: -40, longitude: 120});
+    dateinfo.set("LocationGeo", locGeo);
 
-    dateinfo.set("Blind", false);
-    dateinfo.set("Purpose", "coffee");
-    dateinfo.set("Description", "do stuff");
+    dateinfo.set("Blind", blind);
+    dateinfo.set("Purpose", purpose);
+    dateinfo.set("Description", desc);
 
-    dateinfo.set("PosterAge", 27);
-    dateinfo.set("PosterGender", "male");
+    dateinfo.set("PosterAge", age);
+    dateinfo.set("PosterGender", gender);
 
-    dateinfo.set("PosterMinAgePref", 23);
-    dateinfo.set("PosterMaxAgePref", 30);
-    dateinfo.set("PosterGenderPref", "male");
+    dateinfo.set("PosterMinAgePref", seekmin);
+    dateinfo.set("PosterMaxAgePref", seekmax);
+    dateinfo.set("PosterGenderPref", seekgen);
 
     dateinfo.save(null, {
-        success: function(dateinfo) {
-            console.log("yup");
-        },
+        success: function(dateinfo) { },
         error: function(dateinfo, error) {
-            console.log("nope");
+            alert("error connecting to Parse: " + error);
         }
     });
     return;
