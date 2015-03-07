@@ -95,7 +95,7 @@ $(function() {
 	console.log("Ready");
 	$("#distancePref, #timePref, #categoryPref").on("change", findDates);
 	$("body").on('click', '.in-button', function() {
-		
+		//yo
 	});
 	findDates();
 });
