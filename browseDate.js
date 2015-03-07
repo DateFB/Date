@@ -76,7 +76,7 @@ var displayDates = function(results) {
 	}
 };
 
-
+/*
 <article class="col-sm-6 col-md-4">
 					<div class="thumbnail">
 						<img src="images/Unknown.jpeg" alt="">
@@ -88,7 +88,7 @@ var displayDates = function(results) {
 						<div class="in-button"><button type="button" class="btn btn-primary btn-lg btn-block">Check It Out</button></div>
 					</div>
 				</article>
-
+*/
 //$(function() {
 //	console.log("Ready");
 //	$("#distancePref, #timePref, #categoryPref").on("change", findDates);
