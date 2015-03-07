@@ -33,7 +33,8 @@ var findDates = function() {
                   error: function(error) {
                     alert("Error: " + error.code + " " + error.message);
                   }
-          },
+                });
+          }
           error: function(error) {
             alert("Error: " + error.code + " " + error.message);
           }
