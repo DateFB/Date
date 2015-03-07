@@ -5,7 +5,7 @@ var findDates = function() {
         currentUser.position = position; 
     });
 
-    userInfo;
+    var userInfo;
     
     // get user info
     if (currentUser) {
@@ -67,11 +67,11 @@ var displayDates = function(results) {
 	if (results.length < 1) {
 		$("#results").html('<p>No results found. Please broaden your filters.</p>');
 	} else {
-		$("#results").html('<p>' + results.length + 'results found!</p>');
+		$("#dateResults").html('<p>' + results.length + 'results found!</p>');
 		var html = '<div class="row">';
 		for (result in results) {
 			tdate = results[result];
-			html += '<div class="thumbnail"><img src="' + 
+			//html += '<div class="thumbnail"><img src="' + 
 		}
 	}
 };
