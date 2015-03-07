@@ -1,5 +1,5 @@
 
-(function() {
+// (function() {
     $(function() {
         $("#datepicker").datepicker({dateFormat: "yy-mm-dd"});
         $("#timepicker").timepicker({'timeFormat': 'h:i a'});
@@ -39,15 +39,16 @@
         var cat = catBox.options[catBox.selectedIndex];
         var request = {
             location: focus,
-            radius: 1000,
+            radius: 1609,
             types: ["" + cat.value]
         };
+        console.log(cat.value)
         service.nearbySearch(request, callback);
     }
 
     function callback(results, status) {
-        console.log(results.length);
         if (status == google.maps.places.PlacesServiceStatus.OK) {
+            console.log(results.length);
             for (var i = 0; i < results.length; i++) {
                 createMarker(results[i]);
             }
@@ -65,4 +66,4 @@
             infowindow.open(gmap, this);
         });
     }
-})();
+// })();
