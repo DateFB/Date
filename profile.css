@@ -1,7 +1,14 @@
+html{
+    width: 100%;
+    height: 100%;
+}
+
 body{
     background: url("http://1.bp.blogspot.com/-XRGaNGrhhqw/UDwiy2tQViI/AAAAAAAAJMA/fGk2Djqn6sk/s1600/DSC_0926.jpg");
     text-align: center;
     font-family: 'Lato', sans-serif;
+    width: 100%;
+    height: 100%;
 }
 
 .navbar-custom{
