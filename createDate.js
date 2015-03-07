@@ -14,6 +14,7 @@
     var gmap;
     var focus;
     var service;
+    var markers;
     var infowindow;
     
     function displayMap(position) {
@@ -31,6 +32,10 @@
     catBox.addEventListener("change", updateMap);
     
     function updateMap() {
+        for (var i = 0; i < markers.length; i++) {
+            markers[i].setMap(null);
+        }
+        markers = [];
         var cat = catBox.options[catBox.selectedIndex];
         var request = {
             location: focus,
@@ -54,7 +59,7 @@
             map: gmap,
             position: place.geometry.location
         });
-    
+        markers.push(marker);
         google.maps.event.addListener(marker, 'click', function() {
             infowindow.setContent(place.name + " - " + place.formatted_address);
             infowindow.open(gmap, this);
