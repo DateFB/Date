@@ -121,6 +121,18 @@ function getUserDetails(){
                   $("#profileDescription").html("<i>Tell us about yourself..</i>");
               }
               
+              if (userInfo.get("minAge") != undefined){
+                  $("#profileFilterMinAge").val(userInfo.get("minAge"));
+              }
+              
+              if (userInfo.get("maxAge") != undefined){
+                  $("#profileFilterMaxAge").val(userInfo.get("maxAge"));
+              }
+              
+              if (userInfo.get("distacePref") != undefined){
+                  $("#profileFilterDistance").val(userInfo.get("distacePref"));
+              }
+              
           },
           error: function(error) {
             alert("Error: " + error.code + " " + error.message);
@@ -149,6 +161,10 @@ function saveUserDetails(){
               
               userInfo.set("age", $("#profileAge").val());
               userInfo.set("description", $("#profileDescription").html());
+              userInfo.set("minAge", $("#profileFilterMinAge").val());
+              userInfo.set("maxAge", $("#profileFilterMaxAge").val());
+              userInfo.set("distancePref", $("#profileFilterDistance").val());
+              
               userInfo.save();
           },
           error: function(error) {
