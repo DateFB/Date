@@ -100,15 +100,12 @@
 
             function updateMap() {
                 var cat = catBox.options[catBox.selectedIndex];
-                console.log(catBox);
-                console.log(catBox.selectedIndex);
-                console.log(cat);
-                console.log("" + cat.innerHTML.toLowerCase());
                 var request = {
                     location: focus,
                     radius: 1000,
-                    types: ["" + cat.innerHTML]
+                    types: ["" + cat.innerHTML.toLowerCase()]
                 };
+                console.log(array.length)
                 service.nearbySearch(request, callback);
             }
 
@@ -134,4 +131,3 @@
         </script>
     </body>
 </html>
-
