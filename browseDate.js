@@ -13,6 +13,7 @@ var findDates = function() {
         var UserInformationClass = Parse.Object.extend("UserInformation");
         var query = new Parse.Query(UserInformationClass);
         query.equalTo("fbUserName", currentUser.attributes.username);
+        console.log("Got here");
         query.find({
             success: function(results) {
                 userInfo = results[0];
@@ -24,9 +25,7 @@ var findDates = function() {
                 //                userQuery.lessThanOrEqualTo("age", userInfo.get("maxAge"));
 
                 userQuery.find({
-                    success: function(results) {
-                        console.log(results[0]);
-                    },
+                    success: displayDates,
                     error: function(error) {
                         alert("Error: " + error.code + " " + error.message);
                     }
