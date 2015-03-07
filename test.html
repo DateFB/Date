@@ -18,6 +18,15 @@
     <!-- Parse Javascript Library -->
     <script type="text/javascript" src="https://www.parsecdn.com/js/parse-1.3.5.min.js"></script>
 
+</head>
+
+
+<body>
+
+    <div id="map-canvas"></div>
+
+    <!-- Our JS files -->
+    <script src="parseUtils.js"></script>
     <script type="text/javascript">
     var DateInfo = Parse.Object.extend("DateInfo", { }, {
     createNew: function(userID, dateTime, headline, locationName, lat, lon, blind, category, description, age, minSeek, maxSeek, gen, genSeek) {
@@ -58,16 +67,5 @@ var instance = new DateInfo("111", new Date(), "Make it a double.", "Starbucks",
 console.log("before");
 
     </script>
-
-</head>
-
-
-<body>
-
-    <div id="map-canvas"></div>
-
-    <!-- Our JS files -->
-    <script src="parseUtils.js"></script>
-
 </body>
 </html>
