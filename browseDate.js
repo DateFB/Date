@@ -39,6 +39,7 @@ var displayDates = function(results) {
 };
 
 $(function() {
+	console.log("Ready");
 	$("#distancePref, #timePref, #categoryPref").on("change", findDates);
 	findDates();
 });
