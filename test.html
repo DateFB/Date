@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title></title>
+        <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://www.parsecdn.com/js/parse-1.3.5.min.js"></script>
+        <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBSUePcmFpi7VdwNfaFXkNc0zo2hO9N9Mk&libraries=places,geometry">
+        </script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.6.2/jquery.timepicker.min.css" />
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.6.2/jquery.timepicker.min.js">
+        </script>
+
+        <script>
+          $(function() {
+            $("#datepicker").datepicker({dateFormat: "yy-mm-dd"});
+            $("#timepicker").timepicker({'timeFormat': 'h:i a'});
+          });
+        </script>
+        <style type="text/css">
+            body, html {
+                height: 100%;
+                width: 100%;
+            }
+
+            #map-canvas {
+                height: 100%;
+                width:  100%;
+                margin: auto;
+                padding: 0px;
+            }
+        </style>
+    </head>
+
+    <body>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <form id="createDate">
+        <div>
+            <p>
+                Date: <input type="text" id="datepicker">
+                Time: <input type="text" id="timepicker" placeholder="12:00">
+            </p>
+            <p>
+                Place: <input type="text" id="locationName" placeholder="Starbucks">
+                Purpose: <select name="category">
+                    <option>Coffee</option>
+                    <option>Food</option>
+                    <option>Event</option>
+                    <option>Museum</option>
+                </select>
+            </p>
+            <p>
+                Enter a short description of your plans (max 300 characters)...<br/>
+                <textarea id="description" rows="10" cols="60" maxlength="300" placeholder="Let's get coffee and people-watch!"></textarea>
+            </p>
+        </div>
+    </form>
+
+    <p>
+        <div id="map-canvas"></div>
+    </p>
+
+    <script>
+            function getLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(displayMap);
+                }
+            }
+
+            var gmap;
+            var focus;
+            var service;
+            var infowindow;
+
+            function displayMap(position) {
+                focus = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                var mapOptions = {
+                    zoom: 15,
+                    center: focus
+                };
+                gmap = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+                infowindow = new google.maps.InfoWindow();
+                service = new google.maps.places.PlacesService(gmap);
+            }
+            google.maps.event.addDomListener(window, 'load', getLocation);
+        </script>
+    </body>
+</html>
