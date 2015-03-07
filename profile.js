@@ -53,7 +53,6 @@ function createInitialUser(){
                     userInfo.set("lastName",currentUser.lastName);
                     userInfo.set("gender", currentUser.gender);
                     userInfo.set("fb_id",currentUser.fb_id);
-                    userInfo.set("birthday",currentUser.birthday);
                     userInfo.save();
                     
                     // get profile pic from fb
@@ -107,6 +106,8 @@ function getUserDetails(){
               userInfo = results[0];
               console.log(userInfo.get("gender"));
               
+              $("#profileImg").attr("src",userInfo.get("profilePic"));
+              
               $("#profileFirstName").html(userInfo.get("firstName"));
               $("#profileGender").html(userInfo.get("gender"));
               
@@ -129,8 +130,20 @@ function getUserDetails(){
                   $("#profileFilterMaxAge").val(userInfo.get("maxAge"));
               }
               
-              if (userInfo.get("distacePref") != undefined){
-                  $("#profileFilterDistance").val(userInfo.get("distacePref"));
+              if (userInfo.get("distancePref") != undefined){
+                  $("#profileFilterDistance").val(userInfo.get("distancePref"));
+              }
+              
+              if (userInfo.get("genderPref") == "male"){
+                  $("#orientationPrefMale").attr("class","profileFilterInterestedIn btn-primary");
+              }
+              
+              if (userInfo.get("genderPref") == "female"){
+                  $("#orientationPrefFemale").attr("class","profileFilterInterestedIn btn-primary");
+              }
+              
+              if (userInfo.get("genderPref") == "other"){
+                  $("#orientationPrefOther").attr("class","profileFilterInterestedIn btn-primary");
               }
               
           },
@@ -149,7 +162,6 @@ function getUserDetails(){
 function saveUserDetails(){
     var currentUser = Parse.User.current();
     if (currentUser) {
-        console.log(currentUser)
         
         var UserInformationClass = Parse.Object.extend("UserInformation");
         var query = new Parse.Query(UserInformationClass);
@@ -172,6 +184,99 @@ function saveUserDetails(){
           }
         });
         
+        
+    } else {
+        // show the signup or login page
+        console.log("crap, user got to this page and they aren't logged in")
+    }
+}
+
+function saveUserGenderPrefMale(){
+    var currentUser = Parse.User.current();
+    if (currentUser) {
+        
+        var UserInformationClass = Parse.Object.extend("UserInformation");
+        var query = new Parse.Query(UserInformationClass);
+        query.equalTo("fbUserName", currentUser.attributes.username);
+        query.find({
+          success: function(results) {
+            
+              userInfo = results[0];
+              
+              userInfo.set("genderPref","male");
+            
+              userInfo.save();
+          },
+          error: function(error) {
+            alert("Error: " + error.code + " " + error.message);
+          }
+        });
+        
+        $("#orientationPrefMale").attr("class","profileFilterInterestedIn btn-primary");
+        $("#orientationPrefFemale").attr("class","profileFilterInterestedIn btn-default");
+        $("#orientationPrefOther").attr("class","profileFilterInterestedIn btn-default");
+        
+    } else {
+        // show the signup or login page
+        console.log("crap, user got to this page and they aren't logged in")
+    }
+}
+
+function saveUserGenderPrefFemale(){
+    var currentUser = Parse.User.current();
+    if (currentUser) {
+        
+        var UserInformationClass = Parse.Object.extend("UserInformation");
+        var query = new Parse.Query(UserInformationClass);
+        query.equalTo("fbUserName", currentUser.attributes.username);
+        query.find({
+          success: function(results) {
+            
+              userInfo = results[0];
+              
+              userInfo.set("genderPref","female");
+            
+              userInfo.save();
+          },
+          error: function(error) {
+            alert("Error: " + error.code + " " + error.message);
+          }
+        });
+        
+        $("#orientationPrefFemale").attr("class","profileFilterInterestedIn btn-primary");
+        $("#orientationPrefMale").attr("class","profileFilterInterestedIn btn-default");
+        $("#orientationPrefOther").attr("class","profileFilterInterestedIn btn-default");
+        
+    } else {
+        // show the signup or login page
+        console.log("crap, user got to this page and they aren't logged in")
+    }
+}
+
+function saveUserGenderPrefOther(){
+    var currentUser = Parse.User.current();
+    if (currentUser) {
+        
+        var UserInformationClass = Parse.Object.extend("UserInformation");
+        var query = new Parse.Query(UserInformationClass);
+        query.equalTo("fbUserName", currentUser.attributes.username);
+        query.find({
+          success: function(results) {
+            
+              userInfo = results[0];
+              
+              userInfo.set("genderPref","other");
+            
+              userInfo.save();
+          },
+          error: function(error) {
+            alert("Error: " + error.code + " " + error.message);
+          }
+        });
+        
+        $("#orientationPrefOther").attr("class","profileFilterInterestedIn btn-primary");
+        $("#orientationPrefMale").attr("class","profileFilterInterestedIn btn-default");
+        $("#orientationPrefFemale").attr("class","profileFilterInterestedIn btn-default");
         
     } else {
         // show the signup or login page
