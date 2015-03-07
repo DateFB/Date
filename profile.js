@@ -2,7 +2,7 @@ currentUser = {};
 
 $("#loginbtn").click(function(){
     
-    Parse.FacebookUtils.logIn(null, {
+    Parse.FacebookUtils.logIn("user-id", {
       success: function(user) {
           
         currentUser.fbUserAuthData = user;
@@ -48,12 +48,23 @@ function createInitialUser(){
                     currentUser.lastName = response.last_name;
                     currentUser.gender = response.gender;
                     currentUser.fb_id = response.id;
+                    currentUser.birthday = response.birthday;
                     
+                    var month = currentUser.birthday.substr(0,2);
+                    var day = currentUser.birthday.substr(3,2);
+                    var year =  currentUser.birthday.substr(6,4);
+                    
+                    var bd = new Date(year,month,day,0,0,0,0);
+                    var now = new Date();
+                    
+                    currentUser.age = Math.floor((now-bd)/86400/365/1000);
                     
                     userInfo.set("firstName", currentUser.firstName);
                     userInfo.set("lastName",currentUser.lastName);
                     userInfo.set("gender", currentUser.gender);
                     userInfo.set("fb_id",currentUser.fb_id);
+                    userInfo.set("birthday",currentUser.birthday);
+                    userInfo.set("age",currentUser.age);
                     userInfo.save();
                     
                     // get profile pic from fb
@@ -106,6 +117,10 @@ function getUserDetails(){
             
               userInfo = results[0];
               console.log(userInfo.get("gender"));
+              
+              $("#profileFirstName").html(userInfo.get("firstName"))
+              $("#profileAge").html(userInfo.get("age"))
+              $("#profileGender").html(userInfo.get("gender"))
           },
           error: function(error) {
             alert("Error: " + error.code + " " + error.message);
