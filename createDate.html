@@ -21,19 +21,6 @@
             src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.6.2/jquery.timepicker.js">
         </script>
         <link href='//fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-        <style type="text/css">
-            #map-container {
-                position: absolute;
-                height: 100%;
-                width: 100%;
-            }
-            #map-canvas {
-                height: 100%;
-                width:  100%;
-                margin: 0px;
-                padding: 0px;
-            }
-        </style>
 
     </head>
 
@@ -64,7 +51,7 @@
 
 
     <form id="createDate">
-        <div>
+        <div id="form-container">
             <div id="createDateHeader">Create a Date</div>
             <p>
                 Headline: <input type="text" id="title" />
@@ -93,6 +80,8 @@
             </p>
         </div>
     </form>
+
+    <div id="map-container"><div id="map-canvas"></div></div>
 
     <script src="createDate.js"></script>
     </body>
