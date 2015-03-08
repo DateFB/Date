@@ -99,7 +99,7 @@
             error: function(error) {
                 alert("Error: " + error.code + " " + error.message);
             }
-        }
+        });
 
         var date = document.getElementById("datepicker").value;
         var p0 = date.split('-');
