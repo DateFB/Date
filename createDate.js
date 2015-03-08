@@ -31,7 +31,7 @@
         catBox = document.getElementById("catbox");
         catBox.addEventListener("change", updateMap);
         document.getElementById("submit").addEventListener("click", makeDateInfo);
-        catBox.change();
+        updateMap();
     }
 
     function updateMap() {
