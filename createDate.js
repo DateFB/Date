@@ -119,6 +119,7 @@
         var locGeo = new Parse.GeoPoint({latitude: upos.coords.latitude, longitude: upos.coords.longitude});
 
         saveDateInfo(uid, datetime, headline, locationName, locGeo, blind, purpose, desc, age, gender, seekmin, seekmax, seekgen);
+        document.getElementById("createDate").reset();
     }
 
     function saveDateInfo(uid, datetime, headline, locName, locGeo, blind, purpose,
