@@ -39,8 +39,8 @@
     function updateMap() {
         for (var i = 0; i < markers.length; i++)
             markers[i].setMap(null);
-
         markers = [];
+
         var cat = catBox.options[catBox.selectedIndex];
         var request = {
             location: focus,
