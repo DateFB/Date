@@ -88,7 +88,7 @@
         var seekmax = 100;
         var seekgen = "";
         query.find({
-          success: function(results) {
+            success: function(results) {
                 userInfo = results[0];
                 gender = userInfo.get("gender");
                 age = userInfo.get("age");
