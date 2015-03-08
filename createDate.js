@@ -17,7 +17,10 @@
     var infowindow;
     var markers = [];
 
+    var upos;  // tmp to pass user's location to Parse
+
     function displayMap(position) {
+        upos = position;
         focus = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
         var mapOptions = {
             zoom: 12,
@@ -113,7 +116,7 @@
         var datetime = new Date(p0[0], p0[1], p0[2], p2[0], p2[1]);
 
         // need to change this to save location of selected place
-        var locGeo = new Parse.GeoPoint({latitude: position.coords.latitude, longitude: position.coords.longitude});
+        var locGeo = new Parse.GeoPoint({latitude: upos.coords.latitude, longitude: upos.coords.longitude});
 
         saveDateInfo(uid, datetime, headline, locationName, locGeo, blind, purpose, desc, age, gender, seekmin, seekmax, seekgen);
     }
