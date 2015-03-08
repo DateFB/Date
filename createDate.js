@@ -71,6 +71,7 @@
         });
     }
 
+    // needs form verification
     function makeDateInfo() {
         // get values from form fields
         var uid = Parse.User.current().attributes.username;
@@ -81,6 +82,7 @@
         var desc = document.getElementById("description").innerHTML;
 
         // query the current user's information
+        // this doesn't work lol (ages and gender info is blank)
         var userInfo;
         var currentUser = Parse.User.current();
         var UserInformationClass = Parse.Object.extend("UserInformation");
