@@ -34,7 +34,6 @@ body{
 }
 
 #map-container {
-    margin-top: 300px;
     position: absolute;
     height: 300px;
     width: 500px;
@@ -45,4 +44,8 @@ body{
     width:  500px;
     margin: 0px;
     padding: 0px;
+}
+
+#desc-paragraph {
+    margin-top: 350px;
 }
