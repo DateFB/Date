@@ -42,7 +42,7 @@
         var cat = catBox.options[catBox.selectedIndex];
         var request = {
             location: focus,
-            radius: 1609,
+            radius: 8045,
             types: ["" + cat.value]
         };
         service.nearbySearch(request, callback);
