@@ -21,7 +21,7 @@
     function displayMap(position) {
         focus = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
         var mapOptions = {
-            zoom: 13,
+            zoom: 14,
             center: focus
         };
         gmap = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
