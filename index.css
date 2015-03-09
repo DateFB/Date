@@ -6,13 +6,20 @@ body{
 
 .navbar-custom{
     font-size: 30px;
-    font-weight: bold;
-    background-color: rgba(0,0,0,.4);
+    //font-weight: bold;
+    //background-color: rgba(0,0,0,.4);
+    background-color: transparent;
     border-style: none;
     color: #FFF;
     overflow: hidden;
     padding: .5em;
-    min-height: 300px;
+    //min-height: 300px;
+}
+
+
+
+.navbar-brand img {
+    background-color: rgba(0,0,0,.5);
 }
 
 .navbar-custom a {
